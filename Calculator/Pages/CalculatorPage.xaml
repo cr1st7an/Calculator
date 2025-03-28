@@ -1,0 +1,42 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Calculator.ViewModels"
+             x:Class="Calculator.Pages.CalculatorPage">
+    <ContentPage.BindingContext>
+        <vm:CalculatorViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Títulos -->
+        <Label Text="Calculadora de Múltiplos de 5"
+               FontSize="24"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+
+        <!-- Entradas -->
+        <Entry Placeholder="Primer número (múltiplo de 5)" 
+               Keyboard="Numeric" 
+               Text="{Binding Numero1}"
+               BackgroundColor="#F0F0F0" />
+
+        <Entry Placeholder="Segundo número (múltiplo de 5)" 
+               Keyboard="Numeric" 
+               Text="{Binding Numero2}"
+               BackgroundColor="#F0F0F0" />
+
+        <!-- Botones -->
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+            <Button Text="Sumar" Command="{Binding SumarCommand}" />
+            <Button Text="Restar" Command="{Binding RestarCommand}" />
+            <Button Text="Multiplicar" Command="{Binding MultiplicarCommand}" />
+            <Button Text="Dividir" Command="{Binding DividirCommand}" />
+        </StackLayout>
+
+        <!-- Resultado -->
+        <Label Text="{Binding Resultado}" 
+               FontSize="20" 
+               FontAttributes="Italic"
+               TextColor="#333333"
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>
