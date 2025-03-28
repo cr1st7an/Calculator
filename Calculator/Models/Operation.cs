@@ -23,7 +23,7 @@ public class Operation
             return numero1 * numero2;
         }
 
-        public int Dividir(int numero1, int numero2)
+        public Double Dividir(Double numero1, Double numero2)
         {
             if (numero2 == 0)
                 throw new DivideByZeroException("El divisor no puede ser 0.");
